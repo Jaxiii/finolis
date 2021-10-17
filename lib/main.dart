@@ -1,67 +1,437 @@
 import 'package:flutter/material.dart';
 
+final Color amber = Color(0xFFFFF8E1);
+
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+List<String> nota = [
+  "",
+  "Si",
+  "Do#",
+  "Re#",
+  "Mi",
+  "Fa#",
+  "Sol#",
+  "La",
+  "Si",
+  "Do#",
+  "Re#",
+  "Mi"
+];
 
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: amber),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Center(
+          child: MyHomePage(),
+        ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  int i = 0;
 
-  void _incrementCounter() {
+  void fazIsso2(int volta) {
     setState(() {
-      _counter++;
+      i = volta;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final _kTabPages = <Widget>[
+      Center(
+          child: Container(
+              width: 200,
+              height: 200,
+              decoration: BoxDecoration(
+                color: Colors.amber[500],
+                shape: BoxShape.circle,
+              ))),
+      Center(
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Container(
+              padding: const EdgeInsets.all(5.0),
+              width: 480,
+              height: 100,
+              color: (Colors.lightGreen[500]),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                        width: 35,
+                        height: 35,
+                        decoration: BoxDecoration(
+                          color: Colors.amber[500],
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: Colors.brown,
+                            width: 3,
+                          ),
+                        )),
+                    Container(
+                        width: 150,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.brown,
+                            width: 3,
+                          ),
+                          color: Colors.cyan[200],
+                        )),
+                    Container(
+                        width: 35,
+                        height: 35,
+                        decoration: BoxDecoration(
+                          color: Colors.grey[400],
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: Colors.brown,
+                            width: 3,
+                          ),
+                        )),
+                  ])),
+          Container(
+            padding: const EdgeInsets.all(5.0),
+            width: 480,
+            height: 100,
+            color: (Colors.brown[400]),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                      width: 32,
+                      height: 32,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.brown,
+                          width: 3,
+                        ),
+                        color: Colors.red[600],
+                      )),
+                  Container(
+                      width: 32,
+                      height: 32,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.brown,
+                          width: 3,
+                        ),
+                        color: Colors.blue[700],
+                      )),
+                  Container(
+                      width: 32,
+                      height: 32,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.brown,
+                          width: 3,
+                        ),
+                        color: Colors.cyan[300],
+                      )),
+                  Container(
+                      width: 32,
+                      height: 32,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.brown,
+                          width: 3,
+                        ),
+                        color: Colors.yellow[600],
+                      )),
+                  Container(
+                      width: 32,
+                      height: 32,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.brown,
+                          width: 3,
+                        ),
+                        color: Colors.orange[600],
+                      )),
+                  Container(
+                      width: 32,
+                      height: 32,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.brown,
+                          width: 3,
+                        ),
+                        color: Colors.purple[300],
+                      )),
+                  Container(
+                      width: 32,
+                      height: 32,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.brown,
+                          width: 3,
+                        ),
+                        color: Colors.green[600],
+                      )),
+                  Container(
+                      width: 32,
+                      height: 32,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.brown,
+                          width: 3,
+                        ),
+                        color: Colors.red[600],
+                      )),
+                  Container(
+                      width: 32,
+                      height: 32,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.brown,
+                          width: 3,
+                        ),
+                        color: Colors.blue[700],
+                      )),
+                  Container(
+                      width: 32,
+                      height: 32,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.brown,
+                          width: 3,
+                        ),
+                        color: Colors.cyan[300],
+                      )),
+                  Container(
+                      width: 32,
+                      height: 32,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.brown,
+                          width: 3,
+                        ),
+                        color: Colors.yellow[600],
+                      )),
+                ]),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                fixedSize: const Size(100, 160), primary: Colors.blue[300]),
+            child: const Text(''),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CaixaCantante()),
+              );
+            },
+          )
+        ]),
+      ),
+      Center(
+          child: Container(
+              width: 200,
+              height: 200,
+              decoration: BoxDecoration(
+                color: Colors.grey[300],
+                shape: BoxShape.circle,
+              ))),
+    ];
+    final _kTabs = <Tab>[
+      Tab(text: 'Roda da Melodia'),
+      Tab(text: 'Caixa Cantante'),
+      Tab(text: 'Roda da Harmonia'),
+    ];
+    return DefaultTabController(
+      length: _kTabs.length,
+      child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Color(0xFFFBC300),
+            title: Text('Ócio Criativo'),
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(Icons.account_circle),
+                onPressed: () {},
+              ),
+            ],
+          ),
+          body: DefaultTabController(
+            length: 3,
+            initialIndex: 1,
+            child: Column(
+              children: <Widget>[
+                Container(
+                    height: 60.0,
+                    width: MediaQuery.of(context).size.width,
+                    color: Colors.white,
+                    child: TabBar(
+                      isScrollable: true,
+                      labelColor: Colors.amber[800],
+                      indicatorColor: Colors.amber[400],
+                      indicatorWeight: 2.0,
+                      labelPadding: EdgeInsets.only(right: 100.0, left: 100.0),
+                      indicatorPadding: EdgeInsets.only(right: 10, left: 10.0),
+                      labelStyle: TextStyle(fontSize: 16.0),
+                      tabs: _kTabs,
+                    )),
+                Container(
+                    height: MediaQuery.of(context).size.height,
+                    child: TabBarView(
+                      children: _kTabPages,
+                    ))
+              ],
+            ),
+          )),
+    );
+  }
+}
+
+class CaixaCantante extends StatefulWidget {
+  @override
+  _CaixaCantante createState() => _CaixaCantante();
+}
+
+class _CaixaCantante extends State<CaixaCantante> {
+  int i = 0;
+  String text = nota[0];
+  void fazIsso2(int volta) {
+    setState(() {
+      i = volta;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Container(
+              padding: const EdgeInsets.all(5.0),
+              width: 480,
+              height: 100,
+              color: (Colors.lightGreen[500]),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                        width: 35,
+                        height: 35,
+                        decoration: BoxDecoration(
+                            color: Colors.amber[500],
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: Colors.brown,
+                              width: 3,
+                            ))),
+                    Container(
+                      width: 150,
+                      height: 40,
+                      child: MeuTexto(i),
+                      decoration: BoxDecoration(
+                        color: Colors.cyan[200],
+                        border: Border.all(
+                          color: Colors.brown,
+                          width: 3,
+                        ),
+                        
+                      ),
+                    ),
+                    Container(
+                        width: 35,
+                        height: 35,
+                        decoration: BoxDecoration(
+                            color: Colors.grey[400],
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: Colors.brown,
+                              width: 3,
+                            ))),
+                  ])),
+          Container(
+            padding: const EdgeInsets.all(5.0),
+            height: 100,
+            color: (Colors.brown[400]),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  MeuBotao(i, 1, Colors.blue[700], false, fazIsso2),
+                  MeuBotao(i, 2, Colors.blue[800], false, fazIsso2),
+                  MeuBotao(i, 3, Colors.teal[300], false, fazIsso2),
+                  MeuBotao(i, 4, Colors.yellow[700], false, fazIsso2),
+                  MeuBotao(i, 5, Colors.orange[800], false, fazIsso2),
+                  MeuBotao(i, 6, Colors.purple[500], false, fazIsso2),
+                  MeuBotao(i, 7, Colors.green[700], false, fazIsso2),
+                  MeuBotao(i, 8, Colors.red[700], false, fazIsso2),
+                  MeuBotao(i, 9, Colors.blue[700], false, fazIsso2),
+                  MeuBotao(i, 10, Colors.teal[300], false, fazIsso2),
+                  MeuBotao(i, 11, Colors.yellow[700], false, fazIsso2),
+                ]),
+          ),
+        ]),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), 
     );
+  }
+}
+
+class MeuBotao extends StatefulWidget {
+  final int meuNumero;
+  dynamic cor;
+  bool isRound;
+  Function callback;
+  int i;
+  MeuBotao(this.i, this.meuNumero, this.cor, this.isRound, this.callback);
+
+  @override
+  _MeuBotaoState createState() => _MeuBotaoState();
+}
+
+class _MeuBotaoState extends State<MeuBotao> {
+  void fazIsso() {
+    setState(() {
+      widget.i = widget.meuNumero;
+      widget.callback(widget.meuNumero);
+    });
+  }
+
+  Widget build(BuildContext context) {
+    return GestureDetector(
+        onTap: fazIsso,
+        child: Container(
+          decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.brown,
+                width: 3,
+              ),
+              color: widget.cor,
+              borderRadius: widget.isRound
+                  ? BorderRadius.circular(30)
+                  : BorderRadius.circular(0)),
+          width: MediaQuery.of(context).size.width / 14,
+          height: MediaQuery.of(context).size.width / 14,
+        ));
+  }
+}
+
+class MeuTexto extends StatefulWidget {
+  int i;
+  MeuTexto(this.i, {Key? key}) : super(key: key);
+
+  @override
+  _MeuTextoState createState() => _MeuTextoState();
+}
+
+class _MeuTextoState extends State<MeuTexto> {
+  @override
+  Widget build(BuildContext context) {
+    return Center(child: Text(nota[widget.i]));
   }
 }
